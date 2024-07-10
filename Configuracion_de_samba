@@ -15,3 +15,19 @@ read only = no                 # Indica que los fichero no son unicamente de lec
 --- encender el demonio de samba ---
 systemctl start smbd.service         # Enciende el demonio
 systemctl enable smbd.service        # Hace que el proceso se encienda al arrancar la maquina
+
+
+
+En caso de que quieras que samba pida credenciales para acceder a los recursos:
+
+useradd samba                 # Crea un usuario samba
+passwd samba                  # Añade una contraseña al usuario samba
+smbpasswd -a samba            # Añade samba a ¿samba?
+
+añadir valid users = samba  al fichero de configuracion
+
+[share]
+path /ruta/al/directorio
+valid users = samba
+browseable = yes
+public = no

@@ -1,0 +1,17 @@
+-Instalar samba desde cualquier distribucion
+
+Editar el fichero de configuracion en /etc/samba/smb.conf
+
+--- compartir de forma basica una carpeta de linux a windows ---
+
+agregar al fichero de configuracion:
+
+[share]
+path /ruta/al/directorio       # Indica la ruta al directorio que se quiere compartir
+browsable = yes                # Permite que los clientes de windows accedan al directorio compartido
+guest ok = yes                 # Permite ver los contenidos de la carpeta sin el uso de credenciales (potencial riesgo de seguridad)
+read only = no                 # Indica que los fichero no son unicamente de lectura (no se permiten cambios de escritura si se encuentra encendido)
+
+--- encender el demonio de samba ---
+systemctl start smbd.service         # Enciende el demonio
+systemctl enable smbd.service        # Hace que el proceso se encienda al arrancar la maquina

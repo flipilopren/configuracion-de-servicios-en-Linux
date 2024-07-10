@@ -11,6 +11,7 @@ path /ruta/al/directorio       # Indica la ruta al directorio que se quiere comp
 browsable = yes                # Permite que los clientes de windows accedan al directorio compartido
 guest ok = yes                 # Permite ver los contenidos de la carpeta sin el uso de credenciales (potencial riesgo de seguridad)
 read only = no                 # Indica que los fichero no son unicamente de lectura (no se permiten cambios de escritura si se encuentra encendido)
+writable = yes                 # Permite hacer cambios en la carpeta
 
 --- encender el demonio de samba ---
 systemctl start smbd.service         # Enciende el demonio
@@ -31,3 +32,4 @@ path /ruta/al/directorio
 valid users = samba
 browsable = yes
 public = no
+writable = yes

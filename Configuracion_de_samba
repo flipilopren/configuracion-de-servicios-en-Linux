@@ -29,5 +29,5 @@ añadir valid users = samba  al fichero de configuracion
 [share]
 path /ruta/al/directorio
 valid users = samba
-browseable = yes
+browsable = yes
 public = no
